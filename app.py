@@ -31,7 +31,7 @@ def home():
     </head>
     <body>
         <div class="container">
-            <h1>Hello from Docker! 5th Time</h1>
+            <h1>Hello from Docker! nth Time</h1>
             <p>This page is served using Flask inside Docker.</p>
         </div>
     </body>
