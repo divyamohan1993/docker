@@ -28,7 +28,7 @@ wget -O autoconfig.sh https://raw.githubusercontent.com/divyamohan1993/devops-sh
 wget -O run-latest.sh https://raw.githubusercontent.com/divyamohan1993/devops-shell-scripts/main/maven-gradle-sanity/run-latest.sh
 chmod +x autoconfig.sh run-latest.sh
 sudo ./autoconfig.sh
-./run-latest.sh || true   # optional: Java/Maven/Gradle sanity
+sudo ./run-latest.sh || true   # optional: Java/Maven/Gradle sanity
 
 # B) Install Docker (official repository)
 sudo apt-get update
