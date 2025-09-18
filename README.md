@@ -8,7 +8,6 @@ Spin up a **reproducible Jenkins Pipeline** that:
 **Who is this for?**  
 Anyone who wants a minimal, copy-paste CI/CD example that proves Jenkins + Docker work on a fresh VM, with **one required plugin** and a single Pipeline script.
 
----
 
 ## Repo at a glance
 
@@ -16,7 +15,7 @@ Anyone who wants a minimal, copy-paste CI/CD example that proves Jenkins + Docke
 - `requirements.txt` → must include `flask` and `gunicorn`
 - `app.py` → binds `0.0.0.0:5000`, exposes `/health`
 
----
+
 
 ## Quick Start
 
@@ -50,7 +49,6 @@ sudo systemctl restart jenkins
 
 > If you also use the shell on this host, log out/in so your session picks up the `docker` group.
 
----
 
 ### 2) In Jenkins UI — install the plugin
 
@@ -58,7 +56,6 @@ sudo systemctl restart jenkins
 Install **Docker Pipeline** (ID: `docker-workflow`).
 Restart if prompted.
 
----
 
 ### 3) Create the Pipeline job (no Jenkinsfile needed)
 
@@ -114,7 +111,6 @@ pipeline {
 }
 ```
 
----
 
 ## Verify
 
@@ -125,7 +121,6 @@ curl -fsS http://<JENKINS_NODE_IP>:5000/health
 # expected: {"status":"OK"}
 ```
 
----
 
 ## Troubleshooting (short)
 
@@ -133,7 +128,6 @@ curl -fsS http://<JENKINS_NODE_IP>:5000/health
 * **Healthcheck fails** → `docker ps -a` and `docker logs <container>`; confirm `requirements.txt` has `flask` + `gunicorn` and the app listens on `0.0.0.0:5000`.
 * **Checkout finds no revision** → job must target branch `main`.
 
----
 
 ## How this helps
 
